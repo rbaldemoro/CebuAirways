@@ -1,0 +1,22 @@
+<div clas="container-fluid">
+	<div class="row">
+		<div class="col-sm-4"></div>
+
+		<div class="col-sm-4">
+			<div class="card">
+				<div class="card-body">
+					<%= form_tag "/login" do %>
+					<h5> Username: </h5>
+					<%= text_field_tag :username,"", class: "form-control" %> <br>
+					<h5> Password: </h5>
+					<%= password_field_tag :pass,"", class: "form-control" %> <br>
+					
+					<%=submit_tag :Login, class: "btn btn-warning" %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-sm-4"></div>
+	</div>
+</div>

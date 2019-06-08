@@ -1,0 +1,38 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Departure:</strong>
+  <%= @flight.departure %>
+</p>
+
+<p>
+  <strong>Arrival:</strong>
+  <%= @flight.arrival %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @flight.destination %>
+</p>
+
+<p>
+  <strong>Baggage:</strong>
+  <%= @flight.baggage %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @flight.capacity %>
+</p>
+
+<%= link_to 'Edit', edit_flight_path(@flight) %> |
+<%= link_to 'Back', flights_path %>
+
+<%= render "list_seat", seats: @flight.seats %>
+
+<br>
+
+<%= render "new_seat", seat: Seat.new, f_id: @flight.id %>
+
+</div>
