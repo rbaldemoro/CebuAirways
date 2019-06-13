@@ -1,10 +1,11 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <h1>Seats</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
-    <tr>
+    <tr align="center">
       <th>Name</th>
       <th>Baggage</th>
       <th>Flight</th>
@@ -13,19 +14,30 @@
   </thead>
 
   <tbody>
+    <!-- remove @ sign while using partial -->
     <% @seats.each do |seat| %>
       <tr>
         <td><%= seat.name %></td>
-        <td><%= seat.baggage %></td>
-        <td><%= seat.flight_id %></td>
-        <td><%= link_to 'Show', seat %></td>
-        <td><%= link_to 'Edit', edit_seat_path(seat) %></td>
-        <td><%= link_to 'Destroy', seat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td align="center"><%= seat.baggage %></td>
+        <td align="center"><%= seat.flight_id %></td>
+        <td>
+           <button class="btn btn-outline-warning btn-block"> 
+              <%= link_to 'Show', seat %>
+           </button>
+        </td>
+        <td>
+           <button class="btn btn-outline-success btn-block"> 
+              <%= link_to 'Edit', edit_seat_path(seat) %>
+           </button>
+        </td>
+        <td>
+          <button class="btn btn-outline-danger btn-block"> 
+            <%= link_to 'Destroy', seat, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </button>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Seat', new_seat_path %>
+</div>

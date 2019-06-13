@@ -1,6 +1,7 @@
 class SeatsController < ApplicationController
   before_action :set_seat, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_login
+  
   # GET /seats
   # GET /seats.json
   def index
@@ -35,6 +36,8 @@ class SeatsController < ApplicationController
         format.json { render json: @seat.errors, status: :unprocessable_entity }
       end
     end
+
+    #redirect_to "/flights/:flight_id"
   end
 
   # PATCH/PUT /seats/1

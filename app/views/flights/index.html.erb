@@ -5,7 +5,7 @@
 
 <table class="table table-bordered">
   <thead>
-    <tr>
+    <tr align="center">
       <th>Departure</th>
       <th>Arrival</th>
       <th>Destination</th>
@@ -17,7 +17,7 @@
 
   <tbody>
     <% @flights.each do |flight| %>
-      <tr>
+      <tr align="center">
         <td><%= flight.departure %></td>
         <td><%= flight.arrival %></td>
         <td><%= flight.destination %></td>

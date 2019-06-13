@@ -1,33 +1,32 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Departure:</strong>
-  <%= @flight.departure %>
-</p>
+<h1>Flight Details</h1>
 
-<p>
-  <strong>Arrival:</strong>
-  <%= @flight.arrival %>
-</p>
+<table class="table table-bordered">
+  <tr align="center">
+    <th> Departure </th>
+    <th> Arrival </th>
+    <th> Destination </th>
+    <th> Baggage Allowance </th>
+    <th> Capacity </th>
+    <th> </th>
+  </tr>
+  <tr align="center">
+    <td> <%= @flight.departure %> </td>
+    <td> <%= @flight.arrival %> </td>
+    <td> <%= @flight.destination %> </td>
+    <td> <%= @flight.baggage %> </td>
+    <td> <%= @flight.capacity %> </td>
+    <td>
+      <button class="btn btn-outline-success btn-block"> 
+        <%= link_to 'Edit', edit_flight_path(@flight) %> 
+      </button>
+    </td>
+  </tr>
+</table>
 
-<p>
-  <strong>Destination:</strong>
-  <%= @flight.destination %>
-</p>
 
-<p>
-  <strong>Baggage:</strong>
-  <%= @flight.baggage %>
-</p>
-
-<p>
-  <strong>Capacity:</strong>
-  <%= @flight.capacity %>
-</p>
-
-<%= link_to 'Edit', edit_flight_path(@flight) %> |
-<%= link_to 'Back', flights_path %>
 
 <%= render "list_seat", seats: @flight.seats %>
 

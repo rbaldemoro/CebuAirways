@@ -1,17 +1,28 @@
+<style type="text/css">
+  .card-img-top {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+}
+</style>
+
 <div clas="container-fluid">
 	<div class="row">
 		<div class="col-sm-4"></div>
 
 		<div class="col-sm-4">
 			<div class="card">
+				<!--<img class="card-img-top" src="assets/cebu_logo.jpg">-->
 				<div class="card-body">
+					<h3 align="center"> Welcome to Cebu Airways! </h3> <hr>
+
 					<%= form_tag "/login" do %>
 					<h5> Username: </h5>
 					<%= text_field_tag :username,"", class: "form-control" %> <br>
 					<h5> Password: </h5>
 					<%= password_field_tag :pass,"", class: "form-control" %> <br>
 					
-					<%=submit_tag :Login, class: "btn btn-warning" %>
+					<%=submit_tag :Login, class: "btn btn-warning btn-block" %>
 					<% end %>
 				</div>
 			</div>
