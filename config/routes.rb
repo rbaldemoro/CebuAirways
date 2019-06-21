@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get "logout", to: "pages#logout"
 
+  resources :admins
   resources :seats
   resources :flights
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

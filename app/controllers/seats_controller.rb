@@ -30,14 +30,14 @@ class SeatsController < ApplicationController
     respond_to do |format|
       if @seat.save
         format.html { redirect_to @seat, notice: 'Seat was successfully created.' }
-        format.json { render :show, status: :created, location: @seat }
+        format.json { render :show, status: :created, location: @flights }
       else
         format.html { render :new }
         format.json { render json: @seat.errors, status: :unprocessable_entity }
       end
     end
 
-    #redirect_to "/flights/:flight_id"
+    
   end
 
   # PATCH/PUT /seats/1

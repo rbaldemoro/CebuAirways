@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_08_035243) do
+ActiveRecord::Schema.define(version: 2019_06_16_022451) do
+
+  create_table "admins", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "usertype"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["username"], name: "index_admins_on_username", unique: true
+  end
 
   create_table "flights", force: :cascade do |t|
     t.datetime "departure"
